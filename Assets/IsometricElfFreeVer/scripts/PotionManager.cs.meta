@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 7b9118ce3ed21b546acbca36076d4e51
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 244807
+  packageName: ISOMETRIC_Elf_fighter
+  packageVersion: 1.0
+  assetPath: Assets/IsometricElfFreeVer/scripts/PotionManager.cs
+  uploadId: 569244
