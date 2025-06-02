@@ -9,7 +9,7 @@ public class Score2 : MonoBehaviour
 
     private TextMeshProUGUI textComponent;
     private MoveControle2yeni moveScript;
-    private bool started = true; // test amaçlı doğrudan aktif
+    //private bool started = true; // test amaçlı doğrudan aktif
 
     void Start()
     {

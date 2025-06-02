@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class HighScore : MonoBehaviour
 {
-    bool started = false;
+    //bool started = false;
     public bool final = false;
     public GameObject player;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -12,7 +12,6 @@ public class HighScore : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         

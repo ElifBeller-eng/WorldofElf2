@@ -13,7 +13,7 @@ public class Spawner : MonoBehaviour
     float mytime=0f;
     float constant = 1f;
     int oldxoffset = 0;
-    int xoffset = 0;
+    //int xoffset = 0;
     public GameObject bat;
     public GameObject darkPlatform1;
     public GameObject enemyDark;
@@ -24,7 +24,8 @@ public class Spawner : MonoBehaviour
     {
         if (prefab != null)
         {
-        Instantiate(prefab, position, rotation);
+            //InstantiateIfNotNull
+            Instantiate(prefab, position, rotation);
         }   
         else
         {

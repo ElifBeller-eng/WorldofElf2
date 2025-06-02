@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    bool started = false;
+    //bool started = false;
     public bool final = false;
     public GameObject player;
     private int coinamount1 = 0;

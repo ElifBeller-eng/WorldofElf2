@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class HighScore2 : MonoBehaviour
 {
-    bool started = false;
+    //bool started = false;
     public bool final = false;
     public GameObject player2;
 
