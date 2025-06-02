@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a81526807bdb80d48ba0a643766d25ea
+timeCreated: 1462506973
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62608
+  packageName: Emoji Down The Hill
+  packageVersion: 2.2
+  assetPath: Assets/_EmojiDownTheHill/Prefabs/Game/tree.prefab
+  uploadId: 267138

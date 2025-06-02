@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bf176282c46fd4453b9b9e59f8660da4
+timeCreated: 1484537346
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62608
+  packageName: Emoji Down The Hill
+  packageVersion: 2.2
+  assetPath: Assets/_EmojiDownTheHill/Anim/Sunburst_Rotate.anim
+  uploadId: 267138

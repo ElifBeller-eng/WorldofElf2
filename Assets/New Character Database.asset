@@ -14,10 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characters:
   - name: Elf1
-    characterSprite: {fileID: 8789389696106390385, guid: f3b2bea5a94ea294abff58590b74aa19, type: 3}
+    characterIcon: {fileID: 8789389696106390385, guid: f3b2bea5a94ea294abff58590b74aa19, type: 3}
+    prefab: {fileID: 5005294164708886312, guid: 489d3cd0e81b6fa4ebaa5992e16dd175, type: 3}
   - name: Elf2
-    characterSprite: {fileID: 8789389696106390385, guid: bd274ae07f6aea84596489cb1b4dae48, type: 3}
+    characterIcon: {fileID: -1092134565016378252, guid: e18b749b174f80a4f87066585910113c, type: 3}
+    prefab: {fileID: 9129763580387030460, guid: 974c86267cbce44458323e20f9d38068, type: 3}
   - name: Elf3
-    characterSprite: {fileID: 8789389696106390385, guid: 50fe5a184d8463b4dbec5927b82c0af6, type: 3}
+    characterIcon: {fileID: -1092134565016378252, guid: 8f55d8f2f8f8a784e8690f6fbb6eb93f, type: 3}
+    prefab: {fileID: 3072046524341054846, guid: 18a11a3d41d608f4da522024e5ace8d3, type: 3}
   - name: Elf4
-    characterSprite: {fileID: 8789389696106390385, guid: edd8df0527656754b9ceb5cba3e94936, type: 3}
+    characterIcon: {fileID: -1092134565016378252, guid: 10ca2a9edcbcfeb468c8265e5eb77d06, type: 3}
+    prefab: {fileID: 2256745327014306322, guid: 1eb2230cb5b829248b454eb9c1dc54af, type: 3}

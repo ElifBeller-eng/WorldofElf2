@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 9d1d45661387d7247bdda82d1de68882
+timeCreated: 1461920360
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 200
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62608
+  packageName: Emoji Down The Hill
+  packageVersion: 2.2
+  assetPath: Assets/_EmojiDownTheHill/Scripts/CubeWave.cs
+  uploadId: 267138

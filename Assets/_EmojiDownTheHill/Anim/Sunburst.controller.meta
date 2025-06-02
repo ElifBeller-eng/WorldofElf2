@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d483a1ff087a74816be3d0bb3b056a7f
+timeCreated: 1484537346
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62608
+  packageName: Emoji Down The Hill
+  packageVersion: 2.2
+  assetPath: Assets/_EmojiDownTheHill/Anim/Sunburst.controller
+  uploadId: 267138

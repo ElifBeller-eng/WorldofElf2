@@ -1,19 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;       
 
 public class MainMenu : MonoBehaviour
 {
-      public void PlayGame()
-      {
-            SceneManager.LoadScene(1);
-      }
+    public void PlayGame()
+    {
+        SceneManager.LoadScene("SampleScene"); // Sahne adını uygun şekilde yaz
+    }
 
-      public void ChooseCharacterMenu()
-      {
-
-            SceneManager.LoadScene(2);
-
-
-      }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

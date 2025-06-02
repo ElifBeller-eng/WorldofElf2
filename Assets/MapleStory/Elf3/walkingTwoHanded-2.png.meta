@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      walkingTwoHanded-2_0: -5306324540070873970
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

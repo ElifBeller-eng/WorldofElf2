@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 65bc1948d109247b78811d27d6cace43
+timeCreated: 1484117841
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62608
+  packageName: Emoji Down The Hill
+  packageVersion: 2.2
+  assetPath: Assets/_EmojiDownTheHill/Fonts/EditUndo/editundo.txt
+  uploadId: 267138

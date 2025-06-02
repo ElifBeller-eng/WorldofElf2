@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      standingOneHanded-2_0: 8789389696106390385
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

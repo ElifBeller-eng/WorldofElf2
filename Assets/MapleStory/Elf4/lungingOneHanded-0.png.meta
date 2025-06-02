@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lungingOneHanded-0_0: 464656695187634754
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

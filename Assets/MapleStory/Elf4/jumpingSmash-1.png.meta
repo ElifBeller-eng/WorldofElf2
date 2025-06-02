@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      jumpingSmash-1_0: 6667098790389617399
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

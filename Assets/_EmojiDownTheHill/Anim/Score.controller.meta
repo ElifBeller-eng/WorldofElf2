@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9195add1558a84a0790110419306ec54
+timeCreated: 1468170775
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62608
+  packageName: Emoji Down The Hill
+  packageVersion: 2.2
+  assetPath: Assets/_EmojiDownTheHill/Anim/Score.controller
+  uploadId: 267138

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3259075f37394fc4b85308d07b7e1fcb
+timeCreated: 1461832112
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62608
+  packageName: Emoji Down The Hill
+  packageVersion: 2.2
+  assetPath: Assets/_EmojiDownTheHill/Anim/Jump.anim
+  uploadId: 267138

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fa2aa775d925b4ceaaa126f0ea5c0f18
+timeCreated: 1449813361
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62608
+  packageName: Emoji Down The Hill
+  packageVersion: 2.2
+  assetPath: Assets/_EmojiDownTheHill/Prefabs/Services/ScoreManager.prefab
+  uploadId: 267138

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      thrustingOneHanded-1_0: -5557590982577241301
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 46cfeca2591c8344180da19505aa7ffd
+timeCreated: 1462421008
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62608
+  packageName: Emoji Down The Hill
+  packageVersion: 2.2
+  assetPath: Assets/_EmojiDownTheHill/Anim/Cube.controller
+  uploadId: 267138

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e4652decb0b0c4b40b211b7f6f9bff92
+timeCreated: 1462511885
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62608
+  packageName: Emoji Down The Hill
+  packageVersion: 2.2
+  assetPath: Assets/_EmojiDownTheHill/Anim/Appear.anim
+  uploadId: 267138

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a33c8e0e510ae694ea13e5ab03e432c1
+timeCreated: 1462591911
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62608
+  packageName: Emoji Down The Hill
+  packageVersion: 2.2
+  assetPath: Assets/_EmojiDownTheHill/Anim/BigLeapToTheLeft.anim
+  uploadId: 267138

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4454d52312869084aaf1d96e10477f8e
+timeCreated: 1462589828
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62608
+  packageName: Emoji Down The Hill
+  packageVersion: 2.2
+  assetPath: Assets/_EmojiDownTheHill/Anim/Spring.controller
+  uploadId: 267138

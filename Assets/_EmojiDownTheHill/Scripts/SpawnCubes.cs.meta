@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: b772191a7c2c9f148905fef030a50ee6
+timeCreated: 1461743119
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62608
+  packageName: Emoji Down The Hill
+  packageVersion: 2.2
+  assetPath: Assets/_EmojiDownTheHill/Scripts/SpawnCubes.cs
+  uploadId: 267138

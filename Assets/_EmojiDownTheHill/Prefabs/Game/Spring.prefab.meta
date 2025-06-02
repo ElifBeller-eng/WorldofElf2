@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0cb9484f2fb33f548a008a0c2b43c14e
+timeCreated: 1462589990
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62608
+  packageName: Emoji Down The Hill
+  packageVersion: 2.2
+  assetPath: Assets/_EmojiDownTheHill/Prefabs/Game/Spring.prefab
+  uploadId: 267138

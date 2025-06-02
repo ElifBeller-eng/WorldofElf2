@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 68d5250b33e147a4a8cba21f13d7a028
+timeCreated: 1461903886
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62608
+  packageName: Emoji Down The Hill
+  packageVersion: 2.2
+  assetPath: Assets/_EmojiDownTheHill/Anim/AtDestinationLeft.anim
+  uploadId: 267138

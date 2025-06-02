@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4a48372519aadaa4c875032c30009543
+timeCreated: 1461896450
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62608
+  packageName: Emoji Down The Hill
+  packageVersion: 2.2
+  assetPath: Assets/_EmojiDownTheHill/Anim/JumpRight.anim
+  uploadId: 267138

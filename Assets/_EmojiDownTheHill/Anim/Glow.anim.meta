@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b4de23fff64ca0148a398f5a4dd1bd1e
+timeCreated: 1462437498
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62608
+  packageName: Emoji Down The Hill
+  packageVersion: 2.2
+  assetPath: Assets/_EmojiDownTheHill/Anim/Glow.anim
+  uploadId: 267138

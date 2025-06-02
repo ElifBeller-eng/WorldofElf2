@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 42df265a5479369429b3803713d2a8fe
+timeCreated: 1462684553
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62608
+  packageName: Emoji Down The Hill
+  packageVersion: 2.2
+  assetPath: Assets/_EmojiDownTheHill/Prefabs/Game/WaveOfCube.prefab
+  uploadId: 267138

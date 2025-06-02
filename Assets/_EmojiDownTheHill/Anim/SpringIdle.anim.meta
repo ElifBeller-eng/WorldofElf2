@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 44bb97458b7c97a4d90017ef19360f64
+timeCreated: 1462589828
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62608
+  packageName: Emoji Down The Hill
+  packageVersion: 2.2
+  assetPath: Assets/_EmojiDownTheHill/Anim/SpringIdle.anim
+  uploadId: 267138

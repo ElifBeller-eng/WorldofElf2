@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      thrustingTwoHanded-2_0: -2670187810470967483
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

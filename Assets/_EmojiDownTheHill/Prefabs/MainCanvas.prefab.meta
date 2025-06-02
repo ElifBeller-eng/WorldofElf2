@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 15d810c8dca044a1ab21fc849f21515e
+timeCreated: 1484723382
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62608
+  packageName: Emoji Down The Hill
+  packageVersion: 2.2
+  assetPath: Assets/_EmojiDownTheHill/Prefabs/MainCanvas.prefab
+  uploadId: 267138

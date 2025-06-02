@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2959f98e99f74534cbf870f85c5b14db
+timeCreated: 1462344359
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62608
+  packageName: Emoji Down The Hill
+  packageVersion: 2.2
+  assetPath: Assets/_EmojiDownTheHill/Prefabs/Game/FakeBall.prefab
+  uploadId: 267138

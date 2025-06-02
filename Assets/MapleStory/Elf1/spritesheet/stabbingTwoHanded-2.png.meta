@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      stabbingTwoHanded-2_0: -3139079248452647430
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

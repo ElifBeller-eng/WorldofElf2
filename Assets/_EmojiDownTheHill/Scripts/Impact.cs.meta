@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: e77fce841fd87de4f9a5bc8a541b259d
+timeCreated: 1461917755
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62608
+  packageName: Emoji Down The Hill
+  packageVersion: 2.2
+  assetPath: Assets/_EmojiDownTheHill/Scripts/Impact.cs
+  uploadId: 267138

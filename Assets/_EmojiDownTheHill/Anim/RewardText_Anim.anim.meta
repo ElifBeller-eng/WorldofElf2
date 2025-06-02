@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7c68e53ddff1b4c7090df40cc3a1301e
+timeCreated: 1484537345
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62608
+  packageName: Emoji Down The Hill
+  packageVersion: 2.2
+  assetPath: Assets/_EmojiDownTheHill/Anim/RewardText_Anim.anim
+  uploadId: 267138

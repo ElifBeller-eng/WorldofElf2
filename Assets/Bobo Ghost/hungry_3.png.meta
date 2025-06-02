@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      hungry_3_0: 2044751476430018893
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

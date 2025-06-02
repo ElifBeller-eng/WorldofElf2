@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      angry_3_0: 7465322825351685968
+      angry_3_1: -6225145305955246373
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      firingCrossbow-2_0: 7281989346485135338
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

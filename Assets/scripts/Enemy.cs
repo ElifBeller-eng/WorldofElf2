@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Enemy : MonoBehaviour
 {
@@ -8,10 +10,18 @@ public class Enemy : MonoBehaviour
     public float speed = 0.5f;
     public float range= 3f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public Sprite darkSprite;
+
+
     void Start()
     {
         startpointx = gameObject.transform.position.x;
         startpointy = gameObject.transform.position.y;
+        // SADECE DarkScene'deysek sprite'ı değiştir
+        if (SceneManager.GetActiveScene().name == "DarkScene" && darkSprite != null)
+        {
+            GetComponent<SpriteRenderer>().sprite = darkSprite;
+        }
     }
 
     // Update is called once per frame

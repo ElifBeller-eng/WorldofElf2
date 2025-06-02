@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a50870ba7eea0b642bccea31a889bbec
+timeCreated: 1462437640
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 62608
+  packageName: Emoji Down The Hill
+  packageVersion: 2.2
+  assetPath: Assets/_EmojiDownTheHill/Prefabs/Game/Refill Cube.prefab
+  uploadId: 267138

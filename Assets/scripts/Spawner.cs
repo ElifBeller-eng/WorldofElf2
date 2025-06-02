@@ -9,13 +9,32 @@ public class Spawner : MonoBehaviour
     public GameObject bulut;
     public GameObject enemy1;
     public int uzaklık = 5;
-    int positionoffset = 0;
+    int positionoffset = 7;
     float mytime=0f;
     float constant = 1f;
     int oldxoffset = 0;
     int xoffset = 0;
+    public GameObject bat;
+    public GameObject darkPlatform1;
+    public GameObject enemyDark;
+    public GameObject bronzeCoin;
+
+
+
     void Start()
     {
+        string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+
+
+
+        if (sceneName == "DarkScene")
+        {
+            bulut = bat;
+            platform1 = darkPlatform1;
+            enemy1 = enemyDark;
+        }
+
+
         int xoffset=3*Random.Range(-3, 3);
         while(xoffset==oldxoffset)
         {
@@ -26,13 +45,19 @@ public class Spawner : MonoBehaviour
         for(int i = 0;i<5;i++)
         {
             Instantiate(platform1, new Vector3(xoffset, positionoffset, 0), Quaternion.identity);
-            if(Random.Range(0, 3)<1)
+            //GOLD için
+            if (Random.Range(0, 3) < 1)
             {
-                Instantiate(coin1, new Vector3(xoffset+Random.Range(-2f, 2f), positionoffset+2, 0), Quaternion.identity);
+                Instantiate(coin1, new Vector3(xoffset + Random.Range(-2f, 2f), positionoffset + 2, 0), Quaternion.identity);
             }
-            if(Random.Range(0, 4)<1)
+            // BRONZE COIN (örneğin daha az sıklıkla çıksın)
+            if (Random.Range(0, 3) < 1)
             {
-                Instantiate(enemy1, new Vector3(xoffset+Random.Range(-1f, 1f), positionoffset+2, 0), Quaternion.identity);
+                Instantiate(bronzeCoin, new Vector3(xoffset + Random.Range(-2f, 2f), positionoffset + 2, 0), Quaternion.identity);
+            }
+            if (Random.Range(0, 4) < 1)
+            {
+                Instantiate(enemy1, new Vector3(xoffset + Random.Range(-1f, 1f), positionoffset + 2, 0), Quaternion.identity);
             }
             
             int bulutxoffset=Random.Range(-2,2);
