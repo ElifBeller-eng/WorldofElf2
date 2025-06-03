@@ -1898,7 +1898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 69608724798373267}
   ground: {fileID: 1700998500}
-  speed: 4
+  speed: 5
   xspeed: 10
 --- !u!114 &519420034
 MonoBehaviour:
@@ -2228,7 +2228,7 @@ GameObject:
   - component: {fileID: 598028617}
   m_Layer: 0
   m_Name: Danger
-  m_TagString: death
+  m_TagString: Danger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2955,7 +2955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8469489883895545007, guid: 656dad723da7c854ba6da8743e6f723d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8469489883895545007, guid: 656dad723da7c854ba6da8743e6f723d, type: 3}
       propertyPath: m_TagString
@@ -3266,7 +3266,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

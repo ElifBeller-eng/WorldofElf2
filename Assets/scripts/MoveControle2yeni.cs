@@ -11,7 +11,7 @@ public class MoveControle2yeni : MonoBehaviour
     public TextMeshProUGUI score;
     public TextMeshProUGUI Highscore;
     private Rigidbody2D rb;
-    public TextMeshProUGUI coinText; // ← BUNU EKLE!
+    public TextMeshProUGUI coinText;
     [SerializeField] private float moveSpeed, jumpForce;
 
     private bool move;
@@ -159,11 +159,24 @@ public class MoveControle2yeni : MonoBehaviour
             GameManager2.Instance.ShowGameOverCharacter(1);
         }
 
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Danger"))
         {
-            TakeDamage(1);
+            if (life > 1)
+            {
+                TakeDamage(1);
+            }
+            else
+            {
+                deathSound.Play();
+                Time.timeScale = 0f;
+                over.gameObject.SetActive(true);
+                score.gameObject.GetComponent<Score2>().final = true;
+                Highscore.gameObject.GetComponent<HighScore2>().final = true;
+                GameManager2.Instance.ShowGameOverCharacter(1);
+            }
         }
     }
+
 
     void OnCollisionStay2D(Collision2D collision)
     {
@@ -182,9 +195,27 @@ public class MoveControle2yeni : MonoBehaviour
             rb.linearVelocity = new Vector2(0, 0);
             rb.AddForce(new Vector3(0, jumpForce / 3, 0), ForceMode2D.Impulse);
         }
-        Debug.Log("Çarpışma oldu: " + collision.gameObject.name);
 
+        // GOLD COIN toplama
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            goldCoin++;
+            UpdateGoldCoinUI();
+            CheckForExtraLife();   // ← ekstra can kontrolü
+            coinSound.Play();      // varsa coin sesi
+            Destroy(collision.gameObject);
+        }
+        // SILVER COIN toplama
+        if (collision.gameObject.CompareTag("SilverCoin"))
+        {
+            silverCoin++;
+            UpdateSilverCoinUI();
+            coinSound.Play();      // varsa coin sesi
+            Destroy(collision.gameObject);
+        }
+        Debug.Log("Çarpışma oldu: " + collision.gameObject.name);
     }
+
 
     private void OnCollisionExit2D(Collision2D collision)
     {
@@ -222,9 +253,9 @@ public class MoveControle2yeni : MonoBehaviour
 
     public void CheckForExtraLife()
     {
-        if (goldCoin >= 100)
+        if (goldCoin >= 8) //BUNU 100E ÇIKAR ŞİMDİLİK RAHAT DENEYEBİLMEK İÇİN!!!
         {
-            goldCoin -= 100;
+            goldCoin -= 8; // 8 coin harca//BUNU 100E ÇIKAR ŞİMDİLİK RAHAT DENEYEBİLMEK İÇİN!!!
             life++;
             UpdateLifeUI();
             UpdateGoldCoinUI(); // coin UI'ı da güncelle
@@ -238,13 +269,16 @@ public class MoveControle2yeni : MonoBehaviour
     }
 
     public void TakeDamage(int damageAmount)
-    {
+    {   
+        Debug.Log($"TakeDamage called: Current Life = {life}, Damage = {damageAmount}");
         life -= damageAmount;       // Canı azalt
         if (life < 0) life = 0;     // Can 0’ın altına düşmesin
+        Debug.Log($"TakeDamage result: New Life = {life}");
         UpdateLifeUI();             // UI'ı güncelle
         if (life == 0)
         {
-            // Oyuncu öldü, oyun sonu işlemleri vs.
+            Debug.Log("Oyuncu öldü! Game Over işlemleri burada yapılmalı.");
+            // Buraya game over kodlarını ekleyebilirsin
         }
     }
 

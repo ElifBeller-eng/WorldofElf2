@@ -23,8 +23,8 @@ public class Spawner : MonoBehaviour
     {
         if (prefab != null)
         {
-            //Instantiate
-            InstantiateIfNotNull(prefab, position, rotation);
+            //InstantiateIfNotNull
+            Instantiate(prefab, position, rotation);
         }   
         else
         {

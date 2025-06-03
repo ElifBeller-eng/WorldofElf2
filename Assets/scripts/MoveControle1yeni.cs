@@ -11,7 +11,7 @@ public class MoveControle1yeni : MonoBehaviour
     public TextMeshProUGUI score;
     public TextMeshProUGUI Highscore;
     private Rigidbody2D rb;
-    public TextMeshProUGUI coinText; // ← BUNU EKLE!
+    public TextMeshProUGUI coinText;
     [SerializeField] private float moveSpeed, jumpForce;
 
     private bool move;
@@ -145,27 +145,36 @@ public class MoveControle1yeni : MonoBehaviour
 
             grounded = true;
 
-            // Permet de sauter quand le personnage touche le sol
+        }
+
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Danger"))
+        {
+            if (life > 1)
+            {
+                TakeDamage(1);
+            }
+            else
+            {
+                deathSound.Play();
+                Time.timeScale = 0f;
+                over.gameObject.SetActive(true);
+                score.gameObject.GetComponent<Score>().final = true;
+                Highscore.gameObject.GetComponent<HighScore>().final = true;
+                GameManager2.Instance.ShowGameOverCharacter(0);
+            }
         }
 
         if (collision.gameObject.CompareTag("death"))
         {
-            // Önce sesi çal ve UI'ı güncelle
             deathSound.Play();
-            // OYUNU DURDUR ⛔
             Time.timeScale = 0f;
             over.gameObject.SetActive(true);
             score.gameObject.GetComponent<Score>().final = true;
             Highscore.gameObject.GetComponent<HighScore>().final = true;
             GameManager2.Instance.ShowGameOverCharacter(0);
-
         }
 
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            TakeDamage(1);
-        }
-    }
+    }    
 
     void OnCollisionStay2D(Collision2D collision)
     {
@@ -184,9 +193,26 @@ public class MoveControle1yeni : MonoBehaviour
             rb.linearVelocity = new Vector2(0, 0);
             rb.AddForce(new Vector3(0, jumpForce / 3, 0), ForceMode2D.Impulse);
         }
+
+        // GOLD COIN toplama
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            goldCoin++;
+            UpdateGoldCoinUI();
+            CheckForExtraLife();   // ← burası can verir
+            coinSound.Play();      // ses varsa
+            Destroy(collision.gameObject);
+        }
+        
+        // SILVER COIN toplama
+        if (collision.gameObject.CompareTag("SilverCoin"))
+        {
+            silverCoin++;
+            UpdateSilverCoinUI();
+            coinSound.Play();      // ses varsa
+            Destroy(collision.gameObject);
+        }
         Debug.Log("Çarpışma oldu: " + collision.gameObject.name);
-
-
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -225,9 +251,9 @@ public class MoveControle1yeni : MonoBehaviour
 
     public void CheckForExtraLife()
     {
-        if (goldCoin >= 100)
+        if (goldCoin >= 10) //BUNU 100E ÇIKAR ŞİMDİLİK RAHAT DENEYEBİLMEK İÇİN!!!
         {
-            goldCoin -= 100;
+            goldCoin -= 10; //BUNU 100E ÇIKAR ŞİMDİLİK RAHAT DENEYEBİLMEK İÇİN!!!
             life++;
             UpdateLifeUI();
             UpdateGoldCoinUI(); // coin UI'ı da güncelle
@@ -242,16 +268,17 @@ public class MoveControle1yeni : MonoBehaviour
     }
 
     public void TakeDamage(int damageAmount)
-    {
+    {   
+        Debug.Log($"TakeDamage called: Current Life = {life}, Damage = {damageAmount}");
         life -= damageAmount;       // Canı azalt
         if (life < 0) life = 0;     // Can 0’ın altına düşmesin
+        Debug.Log($"TakeDamage result: New Life = {life}");
         UpdateLifeUI();             // UI'ı güncelle
         if (life == 0)
         {
-            // Oyuncu öldü, oyun sonu işlemleri vs.
+            Debug.Log("Oyuncu öldü! Game Over işlemleri burada yapılmalı.");
+            // Buraya game over kodlarını ekleyebilirsin
         }
     }
     
-
-
 }
