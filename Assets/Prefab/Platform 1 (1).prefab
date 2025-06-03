@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2108671037252394368}
   - component: {fileID: 1187082942812589088}
   - component: {fileID: 2634257491663709047}
-  - component: {fileID: 1137167800828244418}
   m_Layer: 0
   m_Name: Platform 1 (1)
   m_TagString: ground
@@ -183,23 +182,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &1137167800828244418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6099472987751644096}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 067bfc376ca33f844abba0391311ff72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platform1: {fileID: 6099472987751644096}
-  platform2: {fileID: 0}
-  coin1: {fileID: 0}
-  bulut: {fileID: 0}
-  enemy1: {fileID: 0}
-  "uzakl\u0131k": 5
-  bat: {fileID: 0}
-  darkPlatform1: {fileID: 0}

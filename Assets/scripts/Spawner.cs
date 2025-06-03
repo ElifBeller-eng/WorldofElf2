@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public GameObject platform1;
     public GameObject platform2;
     public GameObject coin1;
@@ -14,7 +13,7 @@ public class Spawner : MonoBehaviour
     float constant = 1f;
     int oldxoffset = 0;
     //int xoffset = 0;
-    public GameObject bat;
+    //public GameObject bat;
     public GameObject darkPlatform1;
     public GameObject enemyDark;
     public GameObject bronzeCoin;
@@ -24,8 +23,8 @@ public class Spawner : MonoBehaviour
     {
         if (prefab != null)
         {
-            //InstantiateIfNotNull
-            Instantiate(prefab, position, rotation);
+            //Instantiate
+            InstantiateIfNotNull(prefab, position, rotation);
         }   
         else
         {
@@ -37,26 +36,28 @@ public class Spawner : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("Sahne adı: " + UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+
         string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
 
 
 
         if (sceneName == "DarkScene")
         {
-            bulut = bat;
+            //bulut = bat;
             platform1 = darkPlatform1;
             enemy1 = enemyDark;
         }
 
 
-        int xoffset=3*Random.Range(-3, 3);
-        while(xoffset==oldxoffset)
+        int xoffset = 3 * Random.Range(-3, 3);
+        while (xoffset == oldxoffset)
         {
             oldxoffset = xoffset;
-            xoffset=3*Random.Range(-3, 3);
-            
+            xoffset = 3 * Random.Range(-3, 3);
+
         }
-        for(int i = 0;i<5;i++)
+        for (int i = 0; i < 5; i++)
         {
             //Instantiate(platform1, new Vector3(xoffset, positionoffset, 0), Quaternion.identity);
             InstantiateIfNotNull(platform1, new Vector3(xoffset, positionoffset, 0), Quaternion.identity);
@@ -77,13 +78,13 @@ public class Spawner : MonoBehaviour
                 //Instantiate(enemy1, new Vector3(xoffset + Random.Range(-1f, 1f), positionoffset + 2, 0), Quaternion.identity);
                 InstantiateIfNotNull(enemy1, new Vector3(xoffset + Random.Range(-1f, 1f), positionoffset + 2, 0), Quaternion.identity);
             }
-            
-            int bulutxoffset=Random.Range(-2,2);
-            int bulutyoffset=Random.Range(-7,7);
-            if(3<Random.Range(0, 12))
+
+            int bulutxoffset = Random.Range(-2, 2);
+            int bulutyoffset = Random.Range(-7, 7);
+            if (3 < Random.Range(0, 12))
             {
                 //Instantiate(bulut, new Vector3(xoffset+bulutxoffset, 2*positionoffset+bulutyoffset+17, 0), Quaternion.identity);
-                InstantiateIfNotNull(bulut, new Vector3(xoffset+bulutxoffset, 2*positionoffset+bulutyoffset+17, 0), Quaternion.identity);
+                InstantiateIfNotNull(bulut, new Vector3(xoffset + bulutxoffset, 2 * positionoffset + bulutyoffset + 17, 0), Quaternion.identity);
                 if (8 < Random.Range(0, 10))
                 {
                     //Instantiate(bulut, new Vector3(xoffset + bulutxoffset + Random.Range(5, 15), 2 * positionoffset + bulutyoffset + 22, 0), Quaternion.identity);
@@ -91,18 +92,25 @@ public class Spawner : MonoBehaviour
                 }
             }
             positionoffset += uzaklık;
-            xoffset=3*Random.Range(-3, 3);
-            Debug.Log("xoffset: "+xoffset);
-            while(xoffset==oldxoffset)
+            xoffset = 3 * Random.Range(-3, 3);
+            Debug.Log("xoffset: " + xoffset);
+            while (xoffset == oldxoffset)
             {
-                
-                xoffset=3*Random.Range(-3, 3);
-                Debug.Log("while xoffset: "+xoffset);
-                
+
+                xoffset = 3 * Random.Range(-3, 3);
+                Debug.Log("while xoffset: " + xoffset);
+
             }
             oldxoffset = xoffset;
         }
-        
+        Debug.Log("Final platform1: " + platform1);
+        Debug.Log("Final enemy1: " + enemy1);
+        Debug.Log("Final bulut: " + bulut);
+        Debug.Log("platform1: " + platform1);
+        Debug.Log("coin1: " + coin1);
+        Debug.Log("bronzeCoin: " + bronzeCoin);
+        Debug.Log("enemy1: " + enemy1);
+        Debug.Log("bulut: " + bulut);
     }
 
     // Update is called once per frame

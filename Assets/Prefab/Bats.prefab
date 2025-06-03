@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2808125523336268247}
   - component: {fileID: 4817170299709784193}
-  - component: {fileID: 902184611663893971}
   m_Layer: 0
   m_Name: Bats
   m_TagString: Untagged
@@ -88,23 +87,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &902184611663893971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5990864872484568490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 067bfc376ca33f844abba0391311ff72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platform1: {fileID: 0}
-  platform2: {fileID: 0}
-  coin1: {fileID: 0}
-  bulut: {fileID: 0}
-  enemy1: {fileID: 0}
-  "uzakl\u0131k": 5
-  bat: {fileID: 0}
-  darkPlatform1: {fileID: 6099472987751644096, guid: aa17b1f2554d7af408ddada836dc393a, type: 3}
