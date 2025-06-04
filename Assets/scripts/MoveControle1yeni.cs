@@ -28,8 +28,8 @@ public class MoveControle1yeni : MonoBehaviour
     private Vector3 initialPosition;
     public TextMeshProUGUI silverCoinText;  // Gümüş coin için
     public GameObject bulletPrefab;
-    public Transform firePoint;
-    public float bulletSpeed = 10f;
+    //public Transform firePoint;
+    //public float bulletSpeed = 10f;
     public int life = 1; // başlangıçta sadece 1 can
     public TextMeshProUGUI lifeText;
 
@@ -132,10 +132,10 @@ public class MoveControle1yeni : MonoBehaviour
         }
         Debug.Log("Gold: " + goldCoin + " | Silver: " + silverCoin);
 
-        if (Input.GetKeyDown(KeyCode.DownArrow)) // Sağ Ctrl ile ateş
-        {
-            FireBullet();
-        }
+        //if (Input.GetKeyDown(KeyCode.DownArrow)) // Sağ Ctrl ile ateş
+        //{
+            //FireBullet();
+        //}
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -200,7 +200,9 @@ public class MoveControle1yeni : MonoBehaviour
             goldCoin++;
             UpdateGoldCoinUI();
             CheckForExtraLife();   // ← burası can verir
-            coinSound.Play();      // ses varsa
+            if (coinSound != null)
+                coinSound.Play(); // ses varsa
+            //coinSound.Play();     
             Destroy(collision.gameObject);
         }
         
@@ -240,14 +242,14 @@ public class MoveControle1yeni : MonoBehaviour
             silverCoinText.text = ":" + silverCoin.ToString();
     }
 
-    void FireBullet()
-    {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        float direction = transform.localScale.x > 0 ? 1f : -1f;
-        rb.linearVelocity = new Vector2(direction * bulletSpeed, 0);
-        Debug.Log("Mermi atıldı!");
-    }
+    //void FireBullet()
+    //{
+        //GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        //Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        //float direction = transform.localScale.x > 0 ? 1f : -1f;
+        //rb.linearVelocity = new Vector2(direction * bulletSpeed, 0);
+        //Debug.Log("Mermi atıldı!");
+    //}
 
     public void CheckForExtraLife()
     {

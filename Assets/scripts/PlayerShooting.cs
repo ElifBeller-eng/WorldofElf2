@@ -19,7 +19,7 @@ public class PlayerShooting : MonoBehaviour
             }
             else
             {
-                Debug.Log($"{gameObject.name} yeterli bronz coin'e sahip değil!");
+                Debug.Log($"{gameObject.name} yeterli silver coin'e sahip değil!");
             }
         }
     }

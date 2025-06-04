@@ -28,11 +28,12 @@ public class MoveControle2yeni : MonoBehaviour
     private Vector3 initialPosition;
     public TextMeshProUGUI silverCoinText;  // Gümüş coin için
 
-    public GameObject bulletPrefab;
-    public Transform firePoint;
-    public float bulletSpeed = 10f;
+    //public GameObject bulletPrefab;
+    //public float bulletSpeed = 10f;
     public int life = 1; // başlangıçta sadece 1 can
     public TextMeshProUGUI lifeText;
+    public Transform firePoint2;
+    private Vector3 firePoint2OriginalLocalPosition;
 
 
 
@@ -42,7 +43,9 @@ public class MoveControle2yeni : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         initialPosition = transform.position; // İlk pozisyonu burada kaydet
+        firePoint2OriginalLocalPosition = firePoint2.localPosition;
     }
+
 
     private void Start()
     {
@@ -85,8 +88,10 @@ public class MoveControle2yeni : MonoBehaviour
             }
             Vector3 scale = transform.localScale;
             // sola bakması için
-            scale.x = Mathf.Abs(scale.x);
+            scale.x = Mathf.Abs(scale.x); // sola bakmak için pozitif yap
             transform.localScale = scale;
+            // firePoint'i sola kaydır
+            firePoint2.localPosition = new Vector3(-Mathf.Abs(firePoint2OriginalLocalPosition.x), firePoint2OriginalLocalPosition.y, firePoint2OriginalLocalPosition.z);
             transform.position += Vector3.left * moveSpeed * Time.deltaTime;
             
         }
@@ -105,8 +110,11 @@ public class MoveControle2yeni : MonoBehaviour
             }
             Vector3 scale = transform.localScale;
             // sağa bakması için
-            scale.x = -Mathf.Abs(scale.x);
+            scale.x = -Mathf.Abs(scale.x);  // sağa bakmak için negatif yap
             transform.localScale = scale;
+             // firePoint'i sağa kaydır
+            firePoint2.localPosition = new Vector3(Mathf.Abs(firePoint2OriginalLocalPosition.x), firePoint2OriginalLocalPosition.y, firePoint2OriginalLocalPosition.z);
+
             transform.position += Vector3.right * moveSpeed * Time.deltaTime;
         }
 
@@ -134,10 +142,10 @@ public class MoveControle2yeni : MonoBehaviour
         }
         Debug.Log("Gold: " + goldCoin + " | Silver: " + silverCoin);
 
-        if (Input.GetKeyDown(KeyCode.S)) // Oyuncu 2 → S tuşuyla ateş eder
-        {
-            FireBullet();
-        }
+        //if (Input.GetKeyDown(KeyCode.S)) // Oyuncu 2 → S tuşuyla ateş eder
+        //{
+            //FireBullet();
+        //}
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -242,14 +250,17 @@ public class MoveControle2yeni : MonoBehaviour
             silverCoinText.text = ":" + silverCoin.ToString();
     }
 
-    void FireBullet()
-    {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        float direction = transform.localScale.x > 0 ? 1f : -1f;
-        rb.linearVelocity = new Vector2(direction * bulletSpeed, 0);
-        Debug.Log("Mermi atıldı!");
-    }
+    //void FireBullet()
+    //{
+        //GameObject bullet = Instantiate(bulletPrefab, firePoint2.position, Quaternion.identity);
+        //Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+
+        //float direction = transform.localScale.x < 0 ? 1f : -1f;
+        //rb.linearVelocity = new Vector2(direction * bulletSpeed, 0f);
+
+        //Debug.Log("Mermi atıldı! Yön: " + (direction > 0 ? "Sağ" : "Sol"));
+    //}
+
 
     public void CheckForExtraLife()
     {

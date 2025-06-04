@@ -16,9 +16,9 @@ GameObject:
   - component: {fileID: 1741630252324136285}
   - component: {fileID: 4205414670856364585}
   - component: {fileID: -8601074296377283611}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Elf1 yeni
-  m_TagString: Untagged
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
