@@ -32,8 +32,10 @@ public class MoveControle1yeni : MonoBehaviour
     //public float bulletSpeed = 10f;
     public int life = 1; // başlangıçta sadece 1 can
     public TextMeshProUGUI lifeText;
-
-
+    private bool canShoot = false;
+    private float shootTimer = 0f;
+    public float shootDuration = 60f; // Ateş etme süresi: 60 saniye
+    public PlayerShooting1 shooter; // Inspector’dan bağlayacağız
 
 
     private void Awake()
@@ -49,6 +51,8 @@ public class MoveControle1yeni : MonoBehaviour
         UpdateGoldCoinUI();
         UpdateSilverCoinUI();
         UpdateLifeUI();
+        canShoot = false;
+        shootTimer = 0f;
     }
 
     public void ResetPlayer()
@@ -134,9 +138,27 @@ public class MoveControle1yeni : MonoBehaviour
 
         //if (Input.GetKeyDown(KeyCode.DownArrow)) // Sağ Ctrl ile ateş
         //{
-            //FireBullet();
+        //FireBullet();
         //}
-    }
+        // Ateş etme süresi kontrolü
+        if (canShoot)
+        {
+            shootTimer -= Time.deltaTime;
+            if (shootTimer <= 0)
+            {
+                canShoot = false;
+                shootTimer = 0f;
+                Debug.Log("Ateş etme süresi doldu!");
+            }
+        }
+
+        if (canShoot && shooter != null && Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            shooter.FireBullet();
+        }
+
+
+}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -205,7 +227,7 @@ public class MoveControle1yeni : MonoBehaviour
             //coinSound.Play();     
             Destroy(collision.gameObject);
         }
-        
+
         // SILVER COIN toplama
         if (collision.gameObject.CompareTag("SilverCoin"))
         {
@@ -213,6 +235,14 @@ public class MoveControle1yeni : MonoBehaviour
             UpdateSilverCoinUI();
             coinSound.Play();      // ses varsa
             Destroy(collision.gameObject);
+            // Her 10 silverCoin'de ateş etme yetkisi ver
+            if (silverCoin >= 10) // 10 tane silverCoin topladığında ateş etme yetkisi ver
+            {
+                silverCoin -= 10; //10 gümüş azalt (kullanıldığı için)
+                UpdateSilverCoinUI(); // UI’ı güncelle
+                canShoot = true;
+                shootTimer = shootDuration;
+            }
         }
         Debug.Log("Çarpışma oldu: " + collision.gameObject.name);
     }

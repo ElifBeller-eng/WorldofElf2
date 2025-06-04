@@ -4,7 +4,8 @@ public class Spawner : MonoBehaviour
 {
     public GameObject platform1;
     public GameObject platform2;
-    public GameObject coin1;
+    //public GameObject coin1;
+    public GameObject coin;
     public GameObject bulut;
     public GameObject enemy1;
     public int uzaklık = 5;
@@ -16,7 +17,8 @@ public class Spawner : MonoBehaviour
     //public GameObject bat;
     public GameObject darkPlatform1;
     public GameObject enemyDark;
-    public GameObject bronzeCoin;
+    //public GameObject bronzeCoin;
+    public GameObject SilverCoin;
 
 
     void InstantiateIfNotNull(GameObject prefab, Vector3 position, Quaternion rotation)
@@ -64,18 +66,22 @@ public class Spawner : MonoBehaviour
             //GOLD için
             if (Random.Range(0, 3) < 1)
             {
+                //GOLD COIN tagi coin1 değil coin old. için coin1leri coin şeklinde düzelttim
                 //Instantiate(coin1, new Vector3(xoffset + Random.Range(-2f, 2f), positionoffset + 2, 0), Quaternion.identity);
-                InstantiateIfNotNull(coin1, new Vector3(xoffset + Random.Range(-2f, 2f), positionoffset + 2, 0), Quaternion.identity);
+                InstantiateIfNotNull(coin, new Vector3(xoffset + Random.Range(-2f, 2f), positionoffset + 2, 0), Quaternion.identity);
             }
-            // BRONZE COIN (örneğin daha az sıklıkla çıksın)
+            // SILVER COIN (örneğin daha az sıklıkla çıksın)
             if (Random.Range(0, 3) < 1)
             {
-                //Instantiate(bronzeCoin, new Vector3(xoffset + Random.Range(-2f, 2f), positionoffset + 2, 0), Quaternion.identity);
-                InstantiateIfNotNull(bronzeCoin, new Vector3(xoffset + Random.Range(-2f, 2f), positionoffset + 2, 0), Quaternion.identity);
+                //Instantiate
+                InstantiateIfNotNull(SilverCoin, new Vector3(xoffset + Random.Range(-2f, 2f), positionoffset + 2, 0), Quaternion.identity);
             }
-            if (Random.Range(0, 4) < 1)
+
+            //Alternatif (float ile hassas oran kontrolü):
+            //if (Random.value < 0.05f) // %5 ihtimal
+            if (Random.Range(0, 5) < 1)
             {
-                //Instantiate(enemy1, new Vector3(xoffset + Random.Range(-1f, 1f), positionoffset + 2, 0), Quaternion.identity);
+                //Instantiate
                 InstantiateIfNotNull(enemy1, new Vector3(xoffset + Random.Range(-1f, 1f), positionoffset + 2, 0), Quaternion.identity);
             }
 
@@ -83,11 +89,11 @@ public class Spawner : MonoBehaviour
             int bulutyoffset = Random.Range(-7, 7);
             if (3 < Random.Range(0, 12))
             {
-                //Instantiate(bulut, new Vector3(xoffset+bulutxoffset, 2*positionoffset+bulutyoffset+17, 0), Quaternion.identity);
+                //Instantiate(
                 InstantiateIfNotNull(bulut, new Vector3(xoffset + bulutxoffset, 2 * positionoffset + bulutyoffset + 17, 0), Quaternion.identity);
                 if (8 < Random.Range(0, 10))
                 {
-                    //Instantiate(bulut, new Vector3(xoffset + bulutxoffset + Random.Range(5, 15), 2 * positionoffset + bulutyoffset + 22, 0), Quaternion.identity);
+                    //Instantiate
                     InstantiateIfNotNull(bulut, new Vector3(xoffset + bulutxoffset + Random.Range(5, 15), 2 * positionoffset + bulutyoffset + 22, 0), Quaternion.identity);
                 }
             }
@@ -107,13 +113,12 @@ public class Spawner : MonoBehaviour
         Debug.Log("Final enemy1: " + enemy1);
         Debug.Log("Final bulut: " + bulut);
         Debug.Log("platform1: " + platform1);
-        Debug.Log("coin1: " + coin1);
-        Debug.Log("bronzeCoin: " + bronzeCoin);
+        Debug.Log("coin: " + coin);
+        Debug.Log("SilverCoin: " + SilverCoin);
         Debug.Log("enemy1: " + enemy1);
         Debug.Log("bulut: " + bulut);
     }
 
-    // Update is called once per frame
     void Update()
     {  
         mytime+= Time.deltaTime;
@@ -124,37 +129,43 @@ public class Spawner : MonoBehaviour
             xoffset=3*Random.Range(-3, 3);
             
         }
-        
-        if(mytime>constant)
+
+        if (mytime > constant)
         {
             //Instantiate(platform1, new Vector3(xoffset, positionoffset, 0), Quaternion.identity);
             InstantiateIfNotNull(platform1, new Vector3(xoffset, positionoffset, 0), Quaternion.identity);
             if (Random.Range(0, 3) < 1)
             {
                 //Instantiate(coin1, new Vector3(xoffset + Random.Range(-2f, 2f), positionoffset + 2, 0), Quaternion.identity);
-                InstantiateIfNotNull(coin1, new Vector3(xoffset + Random.Range(-2f, 2f), positionoffset + 2, 0), Quaternion.identity);
+                InstantiateIfNotNull(coin, new Vector3(xoffset + Random.Range(-2f, 2f), positionoffset + 2, 0), Quaternion.identity);
             }
-            if (Random.Range(0, 4) < 1)
+            if (Random.Range(0, 6) < 1) //önceden 4tü az düşman çıksın diye 6 yaptım
             {
                 //Instantiate(enemy1, new Vector3(xoffset+Random.Range(-1f, 1f), positionoffset+2, 0), Quaternion.identity);
-                InstantiateIfNotNull(enemy1, new Vector3(xoffset+Random.Range(-1f, 1f), positionoffset+2, 0), Quaternion.identity);
+                InstantiateIfNotNull(enemy1, new Vector3(xoffset + Random.Range(-1f, 1f), positionoffset + 2, 0), Quaternion.identity);
             }
-            int bulutxoffset=Random.Range(-2,2);
-            int bulutyoffset=Random.Range(-7,7);
-            if(3<Random.Range(0, 12))
+            int bulutxoffset = Random.Range(-2, 2);
+            int bulutyoffset = Random.Range(-7, 7);
+            if (3 < Random.Range(0, 12))
             {
                 //Instantiate(bulut, new Vector3(xoffset+Random.Range(-2,2), 2*positionoffset+Random.Range(-7,7)+17, 0), Quaternion.identity);
-                InstantiateIfNotNull(bulut, new Vector3(xoffset+Random.Range(-2,2), 2*positionoffset+Random.Range(-7,7)+17, 0), Quaternion.identity);
+                InstantiateIfNotNull(bulut, new Vector3(xoffset + Random.Range(-2, 2), 2 * positionoffset + Random.Range(-7, 7) + 17, 0), Quaternion.identity);
                 if (3 < Random.Range(0, 10))
                 {
                     //Instantiate(bulut, new Vector3(xoffset + bulutxoffset + Random.Range(5, 15), 2 * positionoffset + bulutyoffset + 22, 0), Quaternion.identity);
                     InstantiateIfNotNull(bulut, new Vector3(xoffset + bulutxoffset + Random.Range(5, 15), 2 * positionoffset + bulutyoffset + 22, 0), Quaternion.identity);
                 }
             }
-            
+
             positionoffset += uzaklık;
             mytime = 0;
             oldxoffset = xoffset;
+            
+            if (Random.Range(0, 3) < 1)  // Daha az sıklıkla, istersen oranı değiştir
+            {
+                InstantiateIfNotNull(SilverCoin, new Vector3(xoffset + Random.Range(-2f, 2f), positionoffset + 2, 0), Quaternion.identity);
+            }
+
         }
     }
 }

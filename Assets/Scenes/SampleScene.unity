@@ -1404,13 +1404,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platform1: {fileID: 1700998500}
   platform2: {fileID: 1547488535}
-  coin1: {fileID: 1897528930}
+  coin: {fileID: 5502614060721185575, guid: d3005c69fe509354aabf30371f09aca2, type: 3}
   bulut: {fileID: 889680022}
   enemy1: {fileID: 596965607}
   "uzakl\u0131k": 7
   darkPlatform1: {fileID: 6099472987751644096, guid: aa17b1f2554d7af408ddada836dc393a, type: 3}
   enemyDark: {fileID: 5355205228849894840, guid: 6a8aefb5d7cacfe42b5c3aee55902bac, type: 3}
-  bronzeCoin: {fileID: 3578573909300748975, guid: 3c3a0de1c55e34e4b9992242ddf2ca76, type: 3}
+  SilverCoin: {fileID: 3578573909300748975, guid: 3c3a0de1c55e34e4b9992242ddf2ca76, type: 3}
 --- !u!1 &505021736
 GameObject:
   m_ObjectHideFlags: 0
@@ -3014,6 +3014,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5750312718362622071, guid: 876de81dd38876543b7adcac973fdc98, type: 3}
   life: 1
   lifeText: {fileID: 1438670438}
+  shootDuration: 60
+  shooter: {fileID: 743854332}
 --- !u!4 &743854319 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6976994851534746340, guid: 656dad723da7c854ba6da8743e6f723d, type: 3}
@@ -4399,9 +4401,6 @@ PrefabInstance:
       addedObject: {fileID: 1120299053}
     - targetCorrespondingSourceObject: {fileID: 3829501845207806828, guid: 54302dd0fe1afe842ae2434a8ee94862, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1120299063}
-    - targetCorrespondingSourceObject: {fileID: 3829501845207806828, guid: 54302dd0fe1afe842ae2434a8ee94862, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1120299064}
   m_SourcePrefab: {fileID: 100100000, guid: 54302dd0fe1afe842ae2434a8ee94862, type: 3}
 --- !u!1 &1120299049 stripped
@@ -4443,6 +4442,8 @@ MonoBehaviour:
   life: 1
   lifeText: {fileID: 825881606}
   firePoint2: {fileID: 1026845185}
+  shootDuration: 60
+  shooter: {fileID: 1120299064}
 --- !u!82 &1120299054 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: -6885153925815325216, guid: 54302dd0fe1afe842ae2434a8ee94862, type: 3}
@@ -4458,23 +4459,6 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: -7582826916773840740, guid: 54302dd0fe1afe842ae2434a8ee94862, type: 3}
   m_PrefabInstance: {fileID: 1120299048}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1120299063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120299049}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 991241ed2ee2e594f922550b3c85a1fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5750312718362622071, guid: 876de81dd38876543b7adcac973fdc98, type: 3}
-  firePoint: {fileID: 1026845185}
-  bulletSpeed: 10
-  bronzeCoins: 100
-  shootKey: 115
 --- !u!114 &1120299064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5378,13 +5362,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platform1: {fileID: 1700998500}
   platform2: {fileID: 1547488535}
-  coin1: {fileID: 100000, guid: 49e6ee33250214a9facc214f3a2fecb7, type: 3}
+  coin: {fileID: 0}
   bulut: {fileID: 889680022}
   enemy1: {fileID: 596965607}
   "uzakl\u0131k": 7
   darkPlatform1: {fileID: 0}
   enemyDark: {fileID: 0}
-  bronzeCoin: {fileID: 0}
+  SilverCoin: {fileID: 0}
 --- !u!1 &1438670437
 GameObject:
   m_ObjectHideFlags: 0
@@ -6385,13 +6369,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platform1: {fileID: 1700998500}
   platform2: {fileID: 0}
-  coin1: {fileID: 0}
+  coin: {fileID: 0}
   bulut: {fileID: 0}
   enemy1: {fileID: 0}
   "uzakl\u0131k": 5
   darkPlatform1: {fileID: 0}
   enemyDark: {fileID: 0}
-  bronzeCoin: {fileID: 0}
+  SilverCoin: {fileID: 0}
 --- !u!1 &1701872984
 GameObject:
   m_ObjectHideFlags: 0

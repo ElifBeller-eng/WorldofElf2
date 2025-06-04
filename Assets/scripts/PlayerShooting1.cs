@@ -7,16 +7,17 @@ public class PlayerShooting1 : MonoBehaviour
     public float bulletSpeed = 10f;
     //public AudioSource shootSound;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            FireBullet();
-        }
-    }
+    //void Update()
+    //{
+        //if (Input.GetKeyDown(KeyCode.DownArrow))
+        //{
+           // FireBullet();
+        //}
+    //}
 
-    void FireBullet()
+    public void FireBullet()
     {
+        
         if (bulletPrefab != null && firePoint != null)
         {
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
@@ -28,7 +29,7 @@ public class PlayerShooting1 : MonoBehaviour
 
             //if (shootSound != null)
             //{
-                //shootSound.Play();
+            //shootSound.Play();
             //}
 
             Debug.Log("Kurşun ateşlendi.");

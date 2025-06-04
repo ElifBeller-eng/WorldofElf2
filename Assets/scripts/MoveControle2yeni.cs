@@ -34,6 +34,11 @@ public class MoveControle2yeni : MonoBehaviour
     public TextMeshProUGUI lifeText;
     public Transform firePoint2;
     private Vector3 firePoint2OriginalLocalPosition;
+    private bool canShoot = false;
+    private float shootTimer = 0f;
+    public float shootDuration = 60f; // Ateş etme süresi: 60 saniye
+    public PlayerShooting2 shooter; // Inspector’dan bağlayacağız
+
 
 
 
@@ -52,6 +57,8 @@ public class MoveControle2yeni : MonoBehaviour
         UpdateGoldCoinUI();
         UpdateSilverCoinUI();
         UpdateLifeUI();
+        canShoot = false; // Ateş etme izni başlangıçta false
+        shootTimer = 0f; // Ateş etme süresi başlangıçta 0S
     }
 
     public void ResetPlayer()
@@ -93,7 +100,7 @@ public class MoveControle2yeni : MonoBehaviour
             // firePoint'i sola kaydır
             firePoint2.localPosition = new Vector3(-Mathf.Abs(firePoint2OriginalLocalPosition.x), firePoint2OriginalLocalPosition.y, firePoint2OriginalLocalPosition.z);
             transform.position += Vector3.left * moveSpeed * Time.deltaTime;
-            
+
         }
 
         if (Input.GetKeyUp(KeyCode.A) || !grounded)
@@ -112,7 +119,7 @@ public class MoveControle2yeni : MonoBehaviour
             // sağa bakması için
             scale.x = -Mathf.Abs(scale.x);  // sağa bakmak için negatif yap
             transform.localScale = scale;
-             // firePoint'i sağa kaydır
+            // firePoint'i sağa kaydır
             firePoint2.localPosition = new Vector3(Mathf.Abs(firePoint2OriginalLocalPosition.x), firePoint2OriginalLocalPosition.y, firePoint2OriginalLocalPosition.z);
 
             transform.position += Vector3.right * moveSpeed * Time.deltaTime;
@@ -144,8 +151,30 @@ public class MoveControle2yeni : MonoBehaviour
 
         //if (Input.GetKeyDown(KeyCode.S)) // Oyuncu 2 → S tuşuyla ateş eder
         //{
-            //FireBullet();
+        //FireBullet();
         //}
+        if (Input.GetKeyDown(KeyCode.S) && canShoot)
+        {
+            if (shooter != null)
+            {
+                shooter.FireBullet();
+            }
+            else
+            {
+                Debug.LogWarning("shooter nesnesi bağlı değil!");
+            }
+        }
+
+        if (canShoot)
+        {
+            shootTimer -= Time.deltaTime;
+            if (shootTimer <= 0f)
+            {
+                canShoot = false;
+                Debug.Log("Ateş etme süresi doldu.");
+            }
+        }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -218,8 +247,16 @@ public class MoveControle2yeni : MonoBehaviour
         {
             silverCoin++;
             UpdateSilverCoinUI();
-            coinSound.Play();      // varsa coin sesi
+            coinSound.Play();      // ses varsa
             Destroy(collision.gameObject);
+            // Her 10 silverCoin'de ateş etme yetkisi ver
+            if (silverCoin >= 10) // 10 tane silverCoin topladığında ateş etme yetkisi ver
+            {
+                silverCoin -= 10; //10 gümüş azalt (kullanıldığı için)
+                UpdateSilverCoinUI(); // UI’ı güncelle
+                canShoot = true;
+                shootTimer = shootDuration;
+            }
         }
         Debug.Log("Çarpışma oldu: " + collision.gameObject.name);
     }
