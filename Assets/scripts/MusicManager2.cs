@@ -8,49 +8,29 @@ public class MusicManager2 : MonoBehaviour
     public Sprite soundOnSprite;
     public Sprite soundOffSprite;
 
-    private AudioSource music;
     private bool isMuted;
 
-    void Awake()
+    void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        if (musicSource == null)
+            musicSource = GetComponent<AudioSource>();
 
-        if (musicSource != null)
-        {
-            music = musicSource;
-        }
-        else
-        {
-            music = GetComponent<AudioSource>();
-        }
-
-        if (music == null)
-        {
-            Debug.LogError("AudioSource bulunamadı!");
-            return;
-        }
-
-        // 🔄 Kaydedilen ayarı geri yükle
-        isMuted = PlayerPrefs.GetInt("MusicMuted", 0) == 1;
+        isMuted = false;
         ApplyMusicState();
     }
 
     public void ToggleMusic()
     {
         isMuted = !isMuted;
-        PlayerPrefs.SetInt("MusicMuted", isMuted ? 1 : 0);
-        PlayerPrefs.Save(); // Kalıcı olarak kaydet
         ApplyMusicState();
     }
 
     private void ApplyMusicState()
     {
-        if (music == null) return;
-
         if (isMuted)
-            music.Pause();
+            musicSource.Pause();
         else
-            music.Play();
+            musicSource.Play();
 
         if (iconImage != null)
             iconImage.sprite = isMuted ? soundOffSprite : soundOnSprite;

@@ -250,9 +250,9 @@ public class MoveControle2yeni : MonoBehaviour
             coinSound.Play();      // ses varsa
             Destroy(collision.gameObject);
             // Her 10 silverCoin'de ateş etme yetkisi ver
-            if (silverCoin >= 10) // 10 tane silverCoin topladığında ateş etme yetkisi ver
+            if (silverCoin >= 6) // 6 tane silverCoin topladığında ateş etme yetkisi ver
             {
-                silverCoin -= 10; //10 gümüş azalt (kullanıldığı için)
+                silverCoin -= 6; //6 gümüş azalt (kullanıldığı için)
                 UpdateSilverCoinUI(); // UI’ı güncelle
                 canShoot = true;
                 shootTimer = shootDuration;
@@ -301,9 +301,9 @@ public class MoveControle2yeni : MonoBehaviour
 
     public void CheckForExtraLife()
     {
-        if (goldCoin >= 8) //BUNU 100E ÇIKAR ŞİMDİLİK RAHAT DENEYEBİLMEK İÇİN!!!
+        if (goldCoin >= 6) //BUNU 100E ÇIKAR ŞİMDİLİK RAHAT DENEYEBİLMEK İÇİN!!!
         {
-            goldCoin -= 8; // 8 coin harca//BUNU 100E ÇIKAR ŞİMDİLİK RAHAT DENEYEBİLMEK İÇİN!!!
+            goldCoin -= 6; // 6 coin harca//BUNU 100E ÇIKAR ŞİMDİLİK RAHAT DENEYEBİLMEK İÇİN!!!
             life++;
             UpdateLifeUI();
             UpdateGoldCoinUI(); // coin UI'ı da güncelle
