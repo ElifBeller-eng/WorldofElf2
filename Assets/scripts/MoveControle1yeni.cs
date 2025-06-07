@@ -36,6 +36,9 @@ public class MoveControle1yeni : MonoBehaviour
     private float shootTimer = 0f;
     public float shootDuration = 60f; // Ateş etme süresi: 60 saniye
     public PlayerShooting1 shooter; // Inspector’dan bağlayacağız
+    public TextMeshProUGUI shootTimerText; // Inspector’dan bağlayacağız
+
+
 
 
     private void Awake()
@@ -157,6 +160,33 @@ public class MoveControle1yeni : MonoBehaviour
             shooter.FireBullet();
         }
 
+        if (canShoot)
+        {
+            shootTimer -= Time.deltaTime;
+            // UI’ı güncelle
+            if (shootTimerText != null)
+            {
+                int secondsLeft = Mathf.CeilToInt(shootTimer);
+                int minutes = secondsLeft / 60;
+                int seconds = secondsLeft % 60;
+                shootTimerText.text = $"{minutes:00}:{seconds:00}";
+            }
+
+            if (shootTimer <= 0)
+            {
+                canShoot = false;
+                shootTimer = 0f;
+
+                // UI’ı temizle
+                if (shootTimerText != null)
+                {
+                    shootTimerText.text = "";
+                }
+                Debug.Log("Ateş etme süresi doldu!");
+            }
+        }
+
+
 
 }
 
@@ -242,6 +272,8 @@ public class MoveControle1yeni : MonoBehaviour
                 UpdateSilverCoinUI(); // UI’ı güncelle
                 canShoot = true;
                 shootTimer = shootDuration;
+                if (shootTimerText != null)
+                    shootTimerText.text = "01:00";
             }
         }
         Debug.Log("Çarpışma oldu: " + collision.gameObject.name);
