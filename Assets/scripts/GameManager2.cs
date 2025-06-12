@@ -99,45 +99,39 @@ public class GameManager2 : MonoBehaviour
     public void ShowGameOverCharacter(int deadPlayerIndex)
     {
         Debug.Log("ShowGameOverCharacter çalıştı! Index: " + deadPlayerIndex);
+
         if (GameOverCharacterImage == null)
         {
-            Debug.LogWarning("GameOverCharacterImage referansı yok! Yeniden bulmaya çalışılıyor...");
             GameOverCharacterImage = GameObject.Find("GameOverCharacterImage")?.GetComponent<Image>();
             if (GameOverCharacterImage == null)
             {
-                Debug.LogError("GameOverCharacterImage hâlâ null! İsim hatalı olabilir.");
+                Debug.LogError("GameOverCharacterImage bulunamadı!");
                 return;
             }
         }
 
+        // Her iki oyuncuyu tamamen sahneden kaldır
         if (player1Character != null)
             player1Character.SetActive(false);
-
-        SpriteRenderer sr1 = player1Character?.GetComponent<SpriteRenderer>();
-        if (sr1 != null)
-            sr1.enabled = false;
-
         if (player2Character != null)
             player2Character.SetActive(false);
 
-        SpriteRenderer sr2 = player2Character?.GetComponent<SpriteRenderer>();
-        if (sr2 != null)
-            sr2.enabled = false;
-
+        // Sadece ölen oyuncunun yere yatan sprite'ını göster
         if (deadPlayerIndex == 0)
         {
             GameOverCharacterImage.sprite = elf1LyingSprite;
-            Debug.Log("Elf 1 sprite atandı.");
+            Debug.Log("Elf 1 sprite yatan olarak gösterildi.");
         }
         else
         {
             GameOverCharacterImage.sprite = elf2LyingSprite;
-            Debug.Log("Elf 2 sprite atandı.");
+            Debug.Log("Elf 2 sprite yatan olarak gösterildi.");
         }
 
+        // Görünür yap
         GameOverCharacterImage.gameObject.SetActive(true);
-        Debug.Log("GameOverCharacterImage gösterildi.");
     }
+
 
     public void RestartGame()
     {

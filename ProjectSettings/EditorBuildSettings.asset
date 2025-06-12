@@ -18,6 +18,8 @@ EditorBuildSettings:
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 3894a98b7f4030d4ab874017b90f1d61, type: 2}
     UnityEditor.XR.VisionOS.VisionOSSettings: {fileID: 11400000, guid: c450e8e459682d74da80a4cba836eb18, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 9c0207610066de246b6675960d5b35d1, type: 2}
+    com.unity.addressableassets: {fileID: 11400000, guid: 32eaf9857228f354b957bbf329fffc0f, type: 2}
     com.unity.dt.app-ui: {fileID: 11400000, guid: 99f9c9493070a9d4c979a8fec7c5a8d3, type: 2}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: d0204e4560314bf458fe1fc712e3719a, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f659f2309b42de244b2b3d50067ee10f, type: 2}
   m_UseUCBPForAssetBundles: 0
