@@ -32,4 +32,8 @@ public class AspectRatioManager : MonoBehaviour
             cam.rect = rect;
         }
     }
+    void Update()
+    {
+        Debug.Log($"Build Resolution: {Screen.width}x{Screen.height}");
+    }
 }

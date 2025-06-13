@@ -6,6 +6,8 @@ public class GameStarter : MonoBehaviour
     public GameObject player1Prefab;
     public GameObject player2Prefab;
 
+    public GameObject camera1;
+
     [Header("Spawn Points")]
     public Transform player1SpawnPoint;
     public Transform player2SpawnPoint;
@@ -14,12 +16,12 @@ public class GameStarter : MonoBehaviour
     {
         if (player1Prefab != null && player1SpawnPoint != null)
         {
-            Instantiate(player1Prefab, player1SpawnPoint.position, Quaternion.identity);
+            camera1.GetComponent<CameraController>().player1 = Instantiate(player1Prefab, player1SpawnPoint.position, Quaternion.identity);
         }
 
         if (player2Prefab != null && player2SpawnPoint != null)
         {
-            Instantiate(player2Prefab, player2SpawnPoint.position, Quaternion.identity);
+            camera1.GetComponent<CameraController>().player2 = Instantiate(player2Prefab, player2SpawnPoint.position, Quaternion.identity);
         }
     }
 }

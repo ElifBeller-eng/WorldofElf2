@@ -13,7 +13,7 @@ public class Spawner : MonoBehaviour
     public GameObject SilverCoin;
 
     float screenHalfWidthInWorldUnits;
-    float platformWidth = 2f;
+    float platformWidth = 5f;
     float mytime = 0f;
     float constant = 1f;
     float oldxoffset = 0f;

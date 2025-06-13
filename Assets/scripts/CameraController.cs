@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
     private bool started = false;
     public float speed = 3f;
     public float catchUpSpeed = 6f;
-    public float followThreshold = 5f;
+    public float followThreshold = 0f;
 
     void Update()
     {
@@ -28,11 +28,13 @@ public class CameraController : MonoBehaviour
         Vector3 pos = transform.position;
 
         // Her zaman sabit yukarı çık
+
         pos.y += speed * Time.deltaTime;
 
         // En yüksek oyuncuya göre kamera pozisyonu ayarla
-        float highestY = pos.y;
 
+        float highestY = pos.y;
+        Debug.Log($"Player1 Y: {player1.transform.position.y}, Camera Y: {pos.y}, Threshold: {followThreshold}");
         if (player1 != null && player1.transform.position.y > highestY + followThreshold)
         {
             highestY = player1.transform.position.y - followThreshold;
@@ -46,6 +48,7 @@ public class CameraController : MonoBehaviour
         if (highestY > pos.y)
         {
             pos.y = Mathf.Lerp(pos.y, highestY, catchUpSpeed * Time.deltaTime);
+            Debug.Log("Catching up to player position: " + pos.y);
         }
 
         transform.position = pos;

@@ -16,14 +16,10 @@ public class MusicManager : MonoBehaviour
 
     void Awake()
     {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
+        
 
         instance = this;
-        DontDestroyOnLoad(gameObject);
+        
 
         isMuted = PlayerPrefs.GetInt("MusicMuted", 0) == 1;
 

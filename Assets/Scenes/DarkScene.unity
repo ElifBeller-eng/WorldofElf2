@@ -2499,9 +2499,9 @@ MonoBehaviour:
   player1: {fileID: 743854317}
   player2: {fileID: 1120299049}
   ground: {fileID: 2154113631289844918}
-  speed: 4
-  catchUpSpeed: 6
-  followThreshold: 5
+  speed: 2.5
+  catchUpSpeed: 4
+  followThreshold: 3
 --- !u!1 &546740918
 GameObject:
   m_ObjectHideFlags: 0
@@ -5643,9 +5643,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1771301272}
-        m_TargetAssemblyTypeName: SoundToggle, Assembly-CSharp
-        m_MethodName: ToggleSound
+      - m_Target: {fileID: 1771301269}
+        m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
+        m_MethodName: ToggleMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8057,6 +8057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1Prefab: {fileID: 743854317}
   player2Prefab: {fileID: 1120299049}
+  camera1: {fileID: 519420028}
   player1SpawnPoint: {fileID: 417775842}
   player2SpawnPoint: {fileID: 1771784170}
 --- !u!4 &1723952018
